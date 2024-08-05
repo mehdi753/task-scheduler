@@ -102,7 +102,7 @@ export class JobsService implements OnModuleInit {
       if (result.affected) {
         const cronjob = this.schedulerRegistry.getCronJob(`job_${job.id}`);
         if (cronjob) {
-          if (!job.is_enabled) {
+          if (!jobData.is_enabled) {
             cronjob.stop();
           } else {
             cronjob.start();
@@ -110,7 +110,7 @@ export class JobsService implements OnModuleInit {
         }
       }
     }
-    return job;
+    return { ...job, ...jobData };
   }
 
   /**
