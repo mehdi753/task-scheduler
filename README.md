@@ -1,4 +1,4 @@
-# Job Scheduler Microservice
+# Task Scheduler Microservice
 
 ## Installation
 
